@@ -112,7 +112,7 @@ const Navbar = () => {
                   Services
                 </NavLink>
                 <NavLink
-                  to=""
+                  to="/contact"
                   className={({ isActive }) =>
                     `nav-link ${isActive ? "active" : ""}`
                   }
@@ -217,7 +217,7 @@ const Navbar = () => {
             Services
           </NavLink>
           <NavLink
-            to=""
+            to="/contact"
             onClick={() => setIsOpen(false)}
             className="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors"
           >
