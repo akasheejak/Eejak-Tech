@@ -1,19 +1,27 @@
-import { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
-import { HiMenu, HiX } from 'react-icons/hi';
-import { FaFacebookF, FaLinkedinIn, FaTwitter, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
-import logo from '../assets/image/logo.png';
+import { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
+import { HiMenu, HiX } from "react-icons/hi";
+import {
+  FaFacebookF,
+  FaLinkedinIn,
+  FaPhoneAlt,
+  FaEnvelope,
+} from "react-icons/fa";
+import logo from "../assets/image/logo.png";
+import { BsTwitterX } from "react-icons/bs";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     }
-    return () => { document.body.style.overflow = ''; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [isOpen]);
 
   return (
@@ -25,11 +33,17 @@ const Navbar = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center text-[14px] font-semibold">
             {/* Left: Contact Info */}
             <div className="flex items-center space-x-10">
-              <a href="tel:+918070004400" className="flex items-center space-x-2.5 hover:text-blue-600 transition-colors group">
+              <a
+                href="tel:+918070004400"
+                className="flex items-center space-x-2.5 hover:text-blue-600 transition-colors group"
+              >
                 <FaPhoneAlt className="text-blue-600 text-[14px] group-hover:rotate-12 transition-transform" />
                 <span className="tracking-wide">+91 807000 4400</span>
               </a>
-              <a href="mailto:info@eejak.com" className="flex items-center space-x-2.5 hover:text-blue-600 transition-colors group">
+              <a
+                href="mailto:info@eejak.com"
+                className="flex items-center space-x-2.5 hover:text-blue-600 transition-colors group"
+              >
                 <FaEnvelope className="text-blue-600 text-[14px] group-hover:-translate-y-0.5 transition-transform" />
                 <span className="tracking-wide">info@eejak.com</span>
               </a>
@@ -37,14 +51,24 @@ const Navbar = () => {
 
             {/* Right: Social Media */}
             <div className="flex items-center space-x-4">
-              <a href="#" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-110 shadow-sm">
+              <a
+                href="#"
+                className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-110 shadow-sm"
+              >
                 <FaFacebookF size={15} />
               </a>
-              <a href="#" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-110 shadow-sm">
+              <a
+                href="https://in.linkedin.com/company/eejak-technologies"
+                target="_blank"
+                className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-110 shadow-sm"
+              >
                 <FaLinkedinIn size={15} />
               </a>
-              <a href="#" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-110 shadow-sm">
-                <FaTwitter size={15} />
+              <a
+                href="#"
+                className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-110 shadow-sm"
+              >
+                <BsTwitterX size={15} />
               </a>
             </div>
           </div>
@@ -54,7 +78,6 @@ const Navbar = () => {
         <nav className="glass-nav">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-24">
-
               {/* Logo */}
               <div className="flex-shrink-0 flex items-center">
                 <NavLink to="/" onClick={() => setIsOpen(false)}>
@@ -64,13 +87,28 @@ const Navbar = () => {
 
               {/* Desktop Menu */}
               <div className="hidden md:flex items-center space-x-2">
-                <NavLink to="/" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+                <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    `nav-link ${isActive ? "active" : ""}`
+                  }
+                >
                   Home
                 </NavLink>
-                <NavLink to="/about" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+                <NavLink
+                  to="/about"
+                  className={({ isActive }) =>
+                    `nav-link ${isActive ? "active" : ""}`
+                  }
+                >
                   About
                 </NavLink>
-                <NavLink to="#" className="nav-link">
+                <NavLink
+                  to=""
+                  className={({ isActive }) =>
+                    `nav-link ${isActive ? "active" : ""}`
+                  }
+                >
                   Contact
                 </NavLink>
               </div>
@@ -96,7 +134,7 @@ const Navbar = () => {
         className={`
           fixed inset-0 z-[60] bg-black/40 backdrop-blur-sm
           transition-opacity duration-300 md:hidden
-          ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
+          ${isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}
         `}
         aria-hidden="true"
       />
@@ -109,7 +147,7 @@ const Navbar = () => {
           flex flex-col
           transition-transform duration-300 ease-in-out
           md:hidden
-          ${isOpen ? 'translate-x-0' : 'translate-x-full'}
+          ${isOpen ? "translate-x-0" : "translate-x-full"}
         `}
       >
         {/* Drawer Header */}
@@ -133,9 +171,10 @@ const Navbar = () => {
             onClick={() => setIsOpen(false)}
             className={({ isActive }) =>
               `block px-4 py-3 rounded-lg text-base font-medium transition-colors
-              ${isActive
-                ? 'bg-blue-50 text-blue-600'
-                : 'text-gray-700 hover:bg-gray-50 hover:text-blue-600'
+              ${
+                isActive
+                  ? "bg-blue-50 text-blue-600"
+                  : "text-gray-700 hover:bg-gray-50 hover:text-blue-600"
               }`
             }
           >
@@ -146,16 +185,17 @@ const Navbar = () => {
             onClick={() => setIsOpen(false)}
             className={({ isActive }) =>
               `block px-4 py-3 rounded-lg text-base font-medium transition-colors
-              ${isActive
-                ? 'bg-blue-50 text-blue-600'
-                : 'text-gray-700 hover:bg-gray-50 hover:text-blue-600'
+              ${
+                isActive
+                  ? "bg-blue-50 text-blue-600"
+                  : "text-gray-700 hover:bg-gray-50 hover:text-blue-600"
               }`
             }
           >
             About
           </NavLink>
           <NavLink
-            to="#"
+            to=""
             onClick={() => setIsOpen(false)}
             className="block px-4 py-3 rounded-lg text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-blue-600 transition-colors"
           >
@@ -165,35 +205,39 @@ const Navbar = () => {
 
         {/* Drawer Footer CTA & Info */}
         <div className="px-5 py-6 border-t border-gray-100 space-y-6">
-          <button className="w-full btn-primary">
-            Get Started
-          </button>
-          
-          <div className="space-y-4 pt-2">
-            <div className="flex flex-col space-y-3">
-              <a href="tel:+918070004400" className="flex items-center space-x-3 text-sm text-gray-600 hover:text-blue-600 transition-colors">
-                <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-blue-600">
-                  <FaPhoneAlt size={12} />
-                </div>
-                <span className="font-medium">+91 807000 4400</span>
-              </a>
-              <a href="mailto:info@eejak.com" className="flex items-center space-x-3 text-sm text-gray-600 hover:text-blue-600 transition-colors">
-                <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-blue-600">
-                  <FaEnvelope size={12} />
-                </div>
-                <span className="font-medium">info@eejak.com</span>
-              </a>
-            </div>
+          <button className="w-full btn-primary">Get Started</button>
 
+          <div className="space-y-4 pt-2">
             <div className="flex items-center space-x-4 pt-2">
-              <a href="#" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-blue-600 hover:text-white transition-all duration-300">
+              <a
+                href="tel:+918070004400"
+                className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-blue-600 hover:text-white transition-all duration-300"
+              >
+                <FaPhoneAlt size={14} />
+              </a>
+              <a
+                href="mailto:info@eejak.com"
+                className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-blue-600 hover:text-white transition-all duration-300"
+              >
+                <FaEnvelope size={14} />
+              </a>
+              <a
+                href="#"
+                className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-blue-600 hover:text-white transition-all duration-300"
+              >
                 <FaFacebookF size={14} />
               </a>
-              <a href="#" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-blue-600 hover:text-white transition-all duration-300">
+              <a
+                href="#"
+                className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-blue-600 hover:text-white transition-all duration-300"
+              >
                 <FaLinkedinIn size={14} />
               </a>
-              <a href="#" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-blue-600 hover:text-white transition-all duration-300">
-                <FaTwitter size={14} />
+              <a
+                href="#"
+                className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-blue-600 hover:text-white transition-all duration-300"
+              >
+                <BsTwitterX size={14} />
               </a>
             </div>
           </div>
@@ -203,4 +247,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navbar;
