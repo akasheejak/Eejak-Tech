@@ -6,7 +6,6 @@ import logo from '../assets/image/logo.png';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Prevent body scroll when drawer is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
