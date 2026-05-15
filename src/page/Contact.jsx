@@ -9,7 +9,7 @@ import {
     FaLinkedinIn
 } from 'react-icons/fa';
 import { BsTwitterX } from "react-icons/bs";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -17,6 +17,7 @@ const Contact = () => {
         email: '',
         message: ''
     });
+    const [showSuccess, setShowSuccess] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -26,7 +27,10 @@ const Contact = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log("Form Payload:", formData);
-        alert("Check console for form data!");
+        setFormData({ name: '', email: '', message: '' });
+        setShowSuccess(true);
+        // Auto-hide after 5 seconds
+        setTimeout(() => setShowSuccess(false), 5000);
     };
 
     const contactInfo = [
@@ -61,6 +65,43 @@ const Contact = () => {
 
     return (
         <div className="py-12 space-y-12 overflow-hidden">
+            {/* ── Success Modal ── */}
+            <AnimatePresence>
+                {showSuccess && (
+                    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            onClick={() => setShowSuccess(false)}
+                            className="absolute inset-0 bg-gray-900/40 backdrop-blur-sm"
+                        />
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                            animate={{ opacity: 1, scale: 1, y: 0 }}
+                            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                            className="relative bg-white rounded-[32px] p-8 md:p-12 shadow-2xl max-w-sm w-full text-center space-y-6"
+                        >
+                            <div className="w-20 h-20 bg-green-50 text-green-600 rounded-full flex items-center justify-center mx-auto text-4xl">
+                                <FaPaperPlane />
+                            </div>
+                            <div className="space-y-2">
+                                <h4 className="text-2xl font-black text-gray-900">Message Sent!</h4>
+                                <p className="text-gray-600">
+                                    Thank you for reaching out. Our team will get back to you shortly.
+                                </p>
+                            </div>
+                            <button 
+                                onClick={() => setShowSuccess(false)}
+                                className="w-full btn-primary py-4 rounded-2xl"
+                            >
+                                Great!
+                            </button>
+                        </motion.div>
+                    </div>
+                )}
+            </AnimatePresence>
+
             {/* ── Header Section ── */}
             <motion.div
                 initial={{ opacity: 0, y: -30 }}
