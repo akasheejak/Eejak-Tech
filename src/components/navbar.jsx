@@ -30,7 +30,7 @@ const Navbar = () => {
       <header className="fixed top-0 left-0 right-0 z-50">
         {/* Top Bar */}
         <div className="bg-white text-gray-700 py-3 hidden md:block border-b border-gray-100 shadow-sm">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center text-[14px] font-semibold">
+          <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center text-[14px] font-semibold">
             {/* Left: Contact Info */}
             <div className="flex items-center space-x-10">
               <a
@@ -76,7 +76,7 @@ const Navbar = () => {
 
         {/* Main Navbar */}
         <nav className="glass-nav">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-24">
               {/* Logo */}
               <div className="flex-shrink-0 flex items-center">
