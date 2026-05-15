@@ -12,13 +12,13 @@ const Home = () => {
       <section className="relative py-8 lg:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left: Content */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="space-y-6 text-center lg:text-left flex flex-col items-center lg:items-start"
           >
-            <motion.h1 
+            <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
@@ -26,8 +26,8 @@ const Home = () => {
             >
               Future-Ready <span className="text-gradient">IT Solutions</span> for Growing Businesses
             </motion.h1>
-            
-            <motion.p 
+
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
@@ -35,8 +35,8 @@ const Home = () => {
             >
               Innovative Technology That Accelerates Performance and Success. We empower your business with state-of-the-art digital transformations.
             </motion.p>
-            
-            <motion.div 
+
+            <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.6, duration: 0.5 }}
@@ -50,18 +50,18 @@ const Home = () => {
           </motion.div>
 
           {/* Right: Visual */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.9, rotate: 2 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
             className="relative flex justify-center lg:justify-end"
           >
             <div className="relative z-10 flex justify-center w-full lg:w-auto">
-              <motion.img 
+              <motion.img
                 animate={{ y: [0, -20, 0] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                src={heroImage} 
-                alt="Hero Illustration" 
+                src={heroImage}
+                alt="Hero Illustration"
                 className="w-[90%] md:w-[80%] h-auto mx-auto lg:mx-0 "
               />
             </div>
@@ -91,16 +91,15 @@ const Home = () => {
       </motion.div>
 
       {/*  */}
-       {/* <motion.div
+      <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.8 }}
       >
- 
+        <ServiceCardInfo />
+      </motion.div>
 
-      </motion.div> */}
-             <ServiceCardInfo />
     </div>
   );
 };
