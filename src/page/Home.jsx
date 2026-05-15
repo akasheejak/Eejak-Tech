@@ -1,6 +1,7 @@
 import heroImage from "../assets/image/heroBanner.png";
 import { FaRocket, FaCloud, FaShieldAlt, FaCode, FaChartLine, FaHeadset } from "react-icons/fa";
 import ServiceComponents from "../components/ServiceComponents";
+import ServiceExpert from "../components/ServiceExpert";
 
 const Home = () => {
   const stats = [
@@ -71,6 +72,9 @@ const Home = () => {
       </section>
       {/* Service Section */}
       <ServiceComponents   />
+
+      {/* Service Expert Section */}
+      <ServiceExpert  />
     </div>
   );
 };
