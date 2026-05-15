@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaArrowRight, FaUsers, FaChartBar, FaCogs, FaGraduationCap, FaShoppingCart, FaFileAlt } from 'react-icons/fa';
+import { motion } from "framer-motion";
 
 const ServiceExpert = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -57,9 +58,15 @@ const ServiceExpert = () => {
   ];
 
   return (
-    <div className="py-0 space-y-12">
+    <div className="py-0 space-y-12 overflow-hidden">
       {/* ── Header Section ── */}
-      <div className="max-w-3xl space-y-6">
+      <motion.div 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="max-w-3xl space-y-6"
+      >
         <div className="inline-block px-4 py-1.5 rounded-full bg-blue-50 text-blue-600 text-sm font-bold tracking-wider uppercase">
           Service Expert
         </div>
@@ -69,13 +76,17 @@ const ServiceExpert = () => {
         <p className="text-gray-600 text-lg leading-relaxed max-w-2xl">
           Innovative platforms that simplify operations, automate workflows, and drive productivity. Trusted by global clients for digital excellence.
         </p>
-      </div>
+      </motion.div>
 
       {/* ── Bento Grid ── */}
       <div className="grid grid-cols-1 md:grid-cols-6 gap-6">
         {solutions.map((item, i) => (
-          <div 
+          <motion.div 
             key={i}
+            initial={{ opacity: 0, scale: 0.9, y: 30 }}
+            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ delay: i * 0.1, duration: 0.6 }}
             onMouseEnter={() => setHoveredIndex(i)}
             onMouseLeave={() => setHoveredIndex(null)}
             className={`
@@ -123,7 +134,7 @@ const ServiceExpert = () => {
                 {item.title.split(' ')[0]}
               </div>
             )}
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
@@ -131,4 +142,5 @@ const ServiceExpert = () => {
 };
 
 export default ServiceExpert;
+
 

@@ -9,6 +9,7 @@ import {
   FaLinkedinIn
 } from 'react-icons/fa';
 import { BsTwitterX } from "react-icons/bs";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const contactInfo = [
@@ -42,9 +43,14 @@ const Contact = () => {
   ];
 
   return (
-    <div className="py-20 space-y-20">
+    <div className="py-20 space-y-20 overflow-hidden">
       {/* ── Header Section ── */}
-      <div className="text-center space-y-4 max-w-3xl mx-auto px-4">
+      <motion.div 
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        className="text-center space-y-4 max-w-3xl mx-auto px-4"
+      >
         <h2 className="text-blue-600 font-bold uppercase tracking-widest text-sm">Contact Us</h2>
         <h3 className="text-4xl md:text-6xl font-black text-gray-900 leading-tight">
           Let's Start a <span className="text-gradient">Conversation</span>
@@ -52,16 +58,29 @@ const Contact = () => {
         <p className="text-gray-600 text-lg">
           Can't find what you're looking for? Reach out to the right team and we'll get back to you shortly.
         </p>
-      </div>
+      </motion.div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
         {/* ── Left: Contact Info ── */}
         <div className="lg:col-span-5 space-y-12">
           <div className="space-y-6">
-            <h4 className="text-2xl font-bold text-gray-900">Contact Information</h4>
+            <motion.h4 
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2 }}
+              className="text-2xl font-bold text-gray-900"
+            >
+              Contact Information
+            </motion.h4>
             <div className="space-y-4">
               {contactInfo.map((item, i) => (
-                <div key={i} className="group glass-card p-6 rounded-2xl border border-gray-100 hover:border-blue-600/30 transition-all duration-300">
+                <motion.div 
+                  key={i}
+                  initial={{ opacity: 0, x: -50 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.3 + i * 0.1, duration: 0.5 }}
+                  className="group glass-card p-6 rounded-2xl border border-gray-100 hover:border-blue-600/30 transition-all duration-300"
+                >
                   <div className="flex items-start space-x-4">
                     <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
                       {item.icon}
@@ -74,18 +93,28 @@ const Contact = () => {
                       </a>
                     </div>
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
 
           {/* Social Section */}
           <div className="space-y-6">
-            <h4 className="text-2xl font-bold text-gray-900">Follow Us</h4>
+            <motion.h4 
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.6 }}
+              className="text-2xl font-bold text-gray-900"
+            >
+              Follow Us
+            </motion.h4>
             <div className="flex items-center gap-4">
               {socials.map((social, i) => (
-                <a 
+                <motion.a 
                   key={i}
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.7 + i * 0.1, type: "spring", stiffness: 200 }}
                   href={social.link}
                   target="_blank"
                   rel="noreferrer"
@@ -93,14 +122,19 @@ const Contact = () => {
                   aria-label={social.name}
                 >
                   {social.icon}
-                </a>
+                </motion.a>
               ))}
             </div>
           </div>
         </div>
 
         {/* ── Right: Contact Form ── */}
-        <div className="lg:col-span-7">
+        <motion.div 
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="lg:col-span-7"
+        >
           <div className="bg-white rounded-[40px] p-8 md:p-12 border border-gray-100 shadow-2xl shadow-blue-500/5">
             <div className="space-y-8">
               <div className="space-y-2">
@@ -143,17 +177,22 @@ const Contact = () => {
                   ></textarea>
                 </div>
 
-                <button className="w-full btn-primary py-5 rounded-2xl flex items-center justify-center space-x-3 text-lg">
+                <motion.button 
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="w-full btn-primary py-5 rounded-2xl flex items-center justify-center space-x-3 text-lg"
+                >
                   <span>Send Message</span>
                   <FaPaperPlane size={18} />
-                </button>
+                </motion.button>
               </form>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
 };
 
-export default Contact;
+export default Contact;
+

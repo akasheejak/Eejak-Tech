@@ -1,83 +1,95 @@
 import heroImage from "../assets/image/heroBanner.png";
-import { FaRocket, FaCloud, FaShieldAlt, FaCode, FaChartLine, FaHeadset } from "react-icons/fa";
+import { FaRocket } from "react-icons/fa";
 import ServiceComponents from "../components/ServiceComponents";
 import ServiceExpert from "../components/ServiceExpert";
+import { motion } from "framer-motion";
 
 const Home = () => {
-  const stats = [
-    { label: "Years Experience", value: "10+" },
-    { label: "Projects Delivered", value: "500+" },
-    { label: "Expert Developers", value: "50+" },
-    { label: "Success Rate", value: "99%" },
-  ];
-
-  const features = [
-    {
-      icon: <FaRocket className="text-blue-600" size={24} />,
-      title: "Digital Transformation",
-      desc: "Accelerate your business growth with our cutting-edge digital strategies."
-    },
-    {
-      icon: <FaCode className="text-blue-600" size={24} />,
-      title: "Custom Development",
-      desc: "Tailor-made software solutions designed to meet your unique business needs."
-    },
-    {
-      icon: <FaCloud className="text-blue-600" size={24} />,
-      title: "Cloud Solutions",
-      desc: "Scale your infrastructure with our secure and reliable cloud services."
-    },
-    {
-      icon: <FaShieldAlt className="text-blue-600" size={24} />,
-      title: "Cyber Security",
-      desc: "Protect your digital assets with our advanced security protocols."
-    },
-  ];
-
   return (
-    <div className="">
+    <div className="overflow-hidden">
       {/* ── Hero Section ── */}
-      <section className="relative ">
+      <section className="relative py-8 lg:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left: Content */}
-          <div className="space-y-6  text-center lg:text-left flex flex-col items-center lg:items-start">
-            <h1 className="text-5xl md:text-7xl font-black tracking-tight text-gray-900 leading-[1.1]">
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="space-y-6 text-center lg:text-left flex flex-col items-center lg:items-start"
+          >
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+              className="text-5xl md:text-7xl font-black tracking-tight text-gray-900 leading-[1.1]"
+            >
               Future-Ready <span className="text-gradient">IT Solutions</span> for Growing Businesses
-            </h1>
-            <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl">
-              Innovative Technology That Accelerates Performance and Success. We empower your business with state-of-the-art digital transformations.
-            </p>
+            </motion.h1>
             
-            <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-4">
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl"
+            >
+              Innovative Technology That Accelerates Performance and Success. We empower your business with state-of-the-art digital transformations.
+            </motion.p>
+            
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.6, duration: 0.5 }}
+              className="flex flex-wrap justify-center lg:justify-start gap-4 pt-4"
+            >
               <button className="btn-primary flex items-center space-x-2 group">
                 <span>Get a Free Consultation</span>
                 <FaRocket className="group-hover:translate-x-1 transition-transform" />
               </button>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Right: Visual */}
-          <div className="relative flex justify-center lg:justify-end">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9, rotate: 2 }}
+            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="relative flex justify-center lg:justify-end"
+          >
             <div className="relative z-10 flex justify-center w-full lg:w-auto">
-              <img 
+              <motion.img 
+                animate={{ y: [0, -20, 0] }}
+                transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
                 src={heroImage} 
                 alt="Hero Illustration" 
-                className="w-[90%] md:w-[80%] h-auto mx-auto lg:mx-0"
+                className="w-[90%] md:w-[80%] h-auto mx-auto lg:mx-0 "
               />
             </div>
             {/* Decorative background circle */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] -z-10 animate-pulse-slow" />
-          </div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] bg-blue-50/50 rounded-full blur-[100px] -z-10 " />
+          </motion.div>
         </div>
       </section>
-      {/* Service Section */}
-      <ServiceComponents   />
 
-      {/* Service Expert Section */}
-      <ServiceExpert  />
+      {/* Service Sections with Scroll Reveal */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8 }}
+      >
+        <ServiceComponents />
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8 }}
+      >
+        <ServiceExpert />
+      </motion.div>
     </div>
   );
 };
 
 export default Home;
-
