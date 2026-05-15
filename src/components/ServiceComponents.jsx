@@ -49,7 +49,7 @@ const Service = () => {
   ];
 
   return (
-    <div className="py-20 space-y-16">
+    <div className="py-12 space-y-12">
       {/* Header Section */}
       <div className="text-center space-y-4 max-w-3xl mx-auto px-4">
         <h2 className="text-blue-600 font-bold uppercase tracking-widest text-sm">What We Do</h2>

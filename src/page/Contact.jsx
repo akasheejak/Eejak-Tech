@@ -43,7 +43,7 @@ const Contact = () => {
   ];
 
   return (
-    <div className="py-20 space-y-20 overflow-hidden">
+    <div className="py-12 space-y-12 overflow-hidden">
       {/* ── Header Section ── */}
       <motion.div 
         initial={{ opacity: 0, y: -30 }}
