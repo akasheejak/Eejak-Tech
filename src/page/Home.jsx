@@ -3,10 +3,11 @@ import { FaRocket } from "react-icons/fa";
 import ServiceComponents from "../components/ServiceComponents";
 import ServiceExpert from "../components/ServiceExpert";
 import { motion } from "framer-motion";
+import ServiceCardInfo from "../components/ServiceCardInfo";
 
 const Home = () => {
   return (
-    <div className="overflow-hidden">
+    <div className="">
       {/* ── Hero Section ── */}
       <section className="relative py-8 lg:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -88,6 +89,18 @@ const Home = () => {
       >
         <ServiceExpert />
       </motion.div>
+
+      {/*  */}
+       {/* <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8 }}
+      >
+ 
+
+      </motion.div> */}
+             <ServiceCardInfo />
     </div>
   );
 };
