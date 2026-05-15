@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { HiMenu, HiX } from 'react-icons/hi';
+import { FaFacebookF, FaLinkedinIn, FaTwitter, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
 import logo from '../assets/image/logo.png';
 
 const Navbar = () => {
@@ -17,44 +18,77 @@ const Navbar = () => {
 
   return (
     <>
-      {/* ── Fixed Top Navbar ── */}
-      <nav className="fixed top-0 left-0 right-0 z-50 glass-nav">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-
-            {/* Logo */}
-            <div className="flex-shrink-0 flex items-center">
-              <NavLink to="/" onClick={() => setIsOpen(false)}>
-                <img src={logo} alt="Logo" className="h-10 w-auto" />
-              </NavLink>
+      {/* ── Fixed Header (Topbar + Navbar) ── */}
+      <header className="fixed top-0 left-0 right-0 z-50">
+        {/* Top Bar */}
+        <div className="bg-white text-gray-700 py-3 hidden md:block border-b border-gray-100 shadow-sm">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center text-[14px] font-semibold">
+            {/* Left: Contact Info */}
+            <div className="flex items-center space-x-10">
+              <a href="tel:+918070004400" className="flex items-center space-x-2.5 hover:text-blue-600 transition-colors group">
+                <FaPhoneAlt className="text-blue-600 text-[14px] group-hover:rotate-12 transition-transform" />
+                <span className="tracking-wide">+91 807000 4400</span>
+              </a>
+              <a href="mailto:info@eejak.com" className="flex items-center space-x-2.5 hover:text-blue-600 transition-colors group">
+                <FaEnvelope className="text-blue-600 text-[14px] group-hover:-translate-y-0.5 transition-transform" />
+                <span className="tracking-wide">info@eejak.com</span>
+              </a>
             </div>
 
-            {/* Desktop Menu */}
-            <div className="hidden md:flex items-center space-x-2">
-              <NavLink to="/" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-                Home
-              </NavLink>
-              <NavLink to="/about" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
-                About
-              </NavLink>
-              <NavLink to="#" className="nav-link">
-                Contact
-              </NavLink>
-            </div>
-
-            {/* Mobile Hamburger */}
-            <div className="md:hidden flex items-center">
-              <button
-                onClick={() => setIsOpen(true)}
-                aria-label="Open menu"
-                className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 focus:outline-none"
-              >
-                <HiMenu className="h-6 w-6" />
-              </button>
+            {/* Right: Social Media */}
+            <div className="flex items-center space-x-4">
+              <a href="#" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-110 shadow-sm">
+                <FaFacebookF size={15} />
+              </a>
+              <a href="#" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-110 shadow-sm">
+                <FaLinkedinIn size={15} />
+              </a>
+              <a href="#" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-110 shadow-sm">
+                <FaTwitter size={15} />
+              </a>
             </div>
           </div>
         </div>
-      </nav>
+
+        {/* Main Navbar */}
+        <nav className="glass-nav">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between items-center h-24">
+
+              {/* Logo */}
+              <div className="flex-shrink-0 flex items-center">
+                <NavLink to="/" onClick={() => setIsOpen(false)}>
+                  <img src={logo} alt="Logo" className="h-12 w-auto" />
+                </NavLink>
+              </div>
+
+              {/* Desktop Menu */}
+              <div className="hidden md:flex items-center space-x-2">
+                <NavLink to="/" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+                  Home
+                </NavLink>
+                <NavLink to="/about" className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>
+                  About
+                </NavLink>
+                <NavLink to="#" className="nav-link">
+                  Contact
+                </NavLink>
+              </div>
+
+              {/* Mobile Hamburger */}
+              <div className="md:hidden flex items-center">
+                <button
+                  onClick={() => setIsOpen(true)}
+                  aria-label="Open menu"
+                  className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 focus:outline-none"
+                >
+                  <HiMenu className="h-6 w-6" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
 
       {/* ── Backdrop Overlay ── */}
       <div
@@ -129,15 +163,44 @@ const Navbar = () => {
           </NavLink>
         </nav>
 
-        {/* Drawer Footer CTA */}
-        <div className="px-5 py-6 border-t border-gray-100">
+        {/* Drawer Footer CTA & Info */}
+        <div className="px-5 py-6 border-t border-gray-100 space-y-6">
           <button className="w-full btn-primary">
             Get Started
           </button>
+          
+          <div className="space-y-4 pt-2">
+            <div className="flex flex-col space-y-3">
+              <a href="tel:+918070004400" className="flex items-center space-x-3 text-sm text-gray-600 hover:text-blue-600 transition-colors">
+                <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-blue-600">
+                  <FaPhoneAlt size={12} />
+                </div>
+                <span className="font-medium">+91 807000 4400</span>
+              </a>
+              <a href="mailto:info@eejak.com" className="flex items-center space-x-3 text-sm text-gray-600 hover:text-blue-600 transition-colors">
+                <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-blue-600">
+                  <FaEnvelope size={12} />
+                </div>
+                <span className="font-medium">info@eejak.com</span>
+              </a>
+            </div>
+
+            <div className="flex items-center space-x-4 pt-2">
+              <a href="#" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-blue-600 hover:text-white transition-all duration-300">
+                <FaFacebookF size={14} />
+              </a>
+              <a href="#" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-blue-600 hover:text-white transition-all duration-300">
+                <FaLinkedinIn size={14} />
+              </a>
+              <a href="#" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-blue-600 hover:text-white transition-all duration-300">
+                <FaTwitter size={14} />
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </>
   );
 };
 
-export default Navbar;
+export default Navbar;

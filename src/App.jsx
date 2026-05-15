@@ -5,7 +5,7 @@ const App = () => {
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-      <main className="pt-20">
+      <main className="pt-40 md:pt-40">
         <Outlet />
       </main>
       
