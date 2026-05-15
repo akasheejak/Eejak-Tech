@@ -39,12 +39,9 @@ const Home = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left: Content */}
           <div className="space-y-1 ">
-
-            
             <h1 className="text-5xl md:text-7xl font-black tracking-tight text-gray-900 leading-[1.1]">
               Future-Ready <span className="text-gradient">IT Solutions</span> for Growing Businesses
             </h1>
-            
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl">
               Innovative Technology That Accelerates Performance and Success. We empower your business with state-of-the-art digital transformations.
             </p>
@@ -63,11 +60,11 @@ const Home = () => {
               <img 
                 src={heroImage} 
                 alt="Hero Illustration" 
-                className="w-full h-auto drop-shadow-2xl rounded-3xl"
+                className="w-[80%] h-auto "
               />
             </div>
             {/* Decorative background circle */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[105%] h-[105%] bg-blue-50/50 rounded-full blur-[100px] -z-10 animate-pulse-slow" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%]  -z-10 animate-pulse-slow" />
           </div>
         </div>
       </section>
