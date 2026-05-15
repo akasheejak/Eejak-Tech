@@ -1,26 +1,44 @@
 import React from 'react';
-import { FaEnvelope, FaUser, FaPaperPlane, FaBuilding, FaUserTie } from 'react-icons/fa';
+import { 
+  FaEnvelope, 
+  FaUser, 
+  FaPaperPlane, 
+  FaPhoneAlt, 
+  FaMapMarkerAlt,
+  FaFacebookF,
+  FaLinkedinIn
+} from 'react-icons/fa';
+import { BsTwitterX } from "react-icons/bs";
 
 const Contact = () => {
-  const inquiries = [
+  const contactInfo = [
     {
-      title: "Vendor Enquiries",
-      email: "manikandan.t@codingmart.com",
-      icon: <FaBuilding className="text-blue-600" size={20} />,
-      desc: "For all vendor-related partnerships and procurement."
+      title: "Phone Number",
+      value: "+91 807000 4400",
+      link: "tel:+918070004400",
+      icon: <FaPhoneAlt className="text-blue-600" size={20} />,
+      desc: "Call us for immediate assistance."
     },
     {
-      title: "HR Enquiries",
-      email: "hr@codingmart.com",
-      icon: <FaUserTie className="text-blue-600" size={20} />,
-      desc: "Careers, internships, and people-related queries."
-    },
-    {
-      title: "Business Enquiries",
-      email: "sales@codingmart.com",
+      title: "Email Address",
+      value: "info@eejak.com",
+      link: "mailto:info@eejak.com",
       icon: <FaEnvelope className="text-blue-600" size={20} />,
-      desc: "Collaborate with us for your next big project."
+      desc: "We usually respond within 24 hours."
+    },
+    {
+      title: "Our Address",
+      value: "H-134, Basement, Sector 63, Noida - 201301 (INDIA)",
+      link: "https://maps.google.com/?q=Sector+63,+Noida",
+      icon: <FaMapMarkerAlt className="text-blue-600" size={20} />,
+      desc: "Visit our office for a face-to-face meeting."
     }
+  ];
+
+  const socials = [
+    { icon: <FaFacebookF />, link: "#", name: "Facebook" },
+    { icon: <FaLinkedinIn />, link: "https://in.linkedin.com/company/eejak-technologies", name: "LinkedIn" },
+    { icon: <BsTwitterX />, link: "#", name: "Twitter" }
   ];
 
   return (
@@ -37,12 +55,12 @@ const Contact = () => {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-        {/* ── Left: Enquiry Categories ── */}
-        <div className="lg:col-span-5 space-y-8">
+        {/* ── Left: Contact Info ── */}
+        <div className="lg:col-span-5 space-y-12">
           <div className="space-y-6">
-            <h4 className="text-2xl font-bold text-gray-900">Reach the Right Department</h4>
+            <h4 className="text-2xl font-bold text-gray-900">Contact Information</h4>
             <div className="space-y-4">
-              {inquiries.map((item, i) => (
+              {contactInfo.map((item, i) => (
                 <div key={i} className="group glass-card p-6 rounded-2xl border border-gray-100 hover:border-blue-600/30 transition-all duration-300">
                   <div className="flex items-start space-x-4">
                     <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">
@@ -51,12 +69,31 @@ const Contact = () => {
                     <div className="space-y-1">
                       <h5 className="font-bold text-gray-900">{item.title}</h5>
                       <p className="text-sm text-gray-500 mb-2">{item.desc}</p>
-                      <a href={`mailto:${item.email}`} className="text-blue-600 font-semibold hover:underline flex items-center space-x-2">
-                        <span>{item.email}</span>
+                      <a href={item.link} target={item.title === "Our Address" ? "_blank" : "_self"} rel="noreferrer" className="text-blue-600 font-semibold hover:underline flex items-center space-x-2">
+                        <span>{item.value}</span>
                       </a>
                     </div>
                   </div>
                 </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Social Section */}
+          <div className="space-y-6">
+            <h4 className="text-2xl font-bold text-gray-900">Follow Us</h4>
+            <div className="flex items-center gap-4">
+              {socials.map((social, i) => (
+                <a 
+                  key={i}
+                  href={social.link}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="w-12 h-12 rounded-full bg-white border border-gray-100 flex items-center justify-center text-gray-600 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-300 transform hover:scale-110 shadow-sm"
+                  aria-label={social.name}
+                >
+                  {social.icon}
+                </a>
               ))}
             </div>
           </div>
