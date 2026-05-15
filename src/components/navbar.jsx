@@ -104,6 +104,14 @@ const Navbar = () => {
                   About
                 </NavLink>
                 <NavLink
+                  to="/services"
+                  className={({ isActive }) =>
+                    `nav-link ${isActive ? "active" : ""}`
+                  }
+                >
+                  Services
+                </NavLink>
+                <NavLink
                   to=""
                   className={({ isActive }) =>
                     `nav-link ${isActive ? "active" : ""}`
@@ -193,6 +201,20 @@ const Navbar = () => {
             }
           >
             About
+          </NavLink>
+          <NavLink
+            to="/services"
+            onClick={() => setIsOpen(false)}
+            className={({ isActive }) =>
+              `block px-4 py-3 rounded-lg text-base font-medium transition-colors
+              ${
+                isActive
+                  ? "bg-blue-50 text-blue-600"
+                  : "text-gray-700 hover:bg-gray-50 hover:text-blue-600"
+              }`
+            }
+          >
+            Services
           </NavLink>
           <NavLink
             to=""
