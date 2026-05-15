@@ -39,7 +39,7 @@ const Home = () => {
       <section className="relative ">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left: Content */}
-          <div className="space-y-1 ">
+          <div className="space-y-6  text-center lg:text-left flex flex-col items-center lg:items-start">
             <h1 className="text-5xl md:text-7xl font-black tracking-tight text-gray-900 leading-[1.1]">
               Future-Ready <span className="text-gradient">IT Solutions</span> for Growing Businesses
             </h1>
@@ -47,7 +47,7 @@ const Home = () => {
               Innovative Technology That Accelerates Performance and Success. We empower your business with state-of-the-art digital transformations.
             </p>
             
-            <div className="flex flex-wrap gap-4 pt-4">
+            <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-4">
               <button className="btn-primary flex items-center space-x-2 group">
                 <span>Get a Free Consultation</span>
                 <FaRocket className="group-hover:translate-x-1 transition-transform" />
@@ -56,21 +56,21 @@ const Home = () => {
           </div>
 
           {/* Right: Visual */}
-          <div className="relative order-1 lg:order-2">
-            <div className="relative z-10">
+          <div className="relative flex justify-center lg:justify-end">
+            <div className="relative z-10 flex justify-center w-full lg:w-auto">
               <img 
                 src={heroImage} 
                 alt="Hero Illustration" 
-                className="w-[80%] h-auto "
+                className="w-[90%] md:w-[80%] h-auto mx-auto lg:mx-0"
               />
             </div>
             {/* Decorative background circle */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%]  -z-10 animate-pulse-slow" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[80%] -z-10 animate-pulse-slow" />
           </div>
         </div>
       </section>
       {/* Service Section */}
-<ServiceComponents   />
+      <ServiceComponents   />
     </div>
   );
 };
