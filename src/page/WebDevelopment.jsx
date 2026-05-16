@@ -37,8 +37,9 @@ const WebDevelopment = () => {
               transition={{ delay: 0.2 }}
               className="text-xl text-gray-600 leading-relaxed"
             >
-              We build scalable, high-performance web applications that drive 
-              business growth and deliver exceptional user experiences.
+              Eejak Solutions is one of the leading Web apps development company located in Noida, India. 
+              We design and develop web apps that are of high quality, user-friendly, 
+              business-driven, and innovative.
             </motion.p>
           </div>
         </div>
@@ -56,11 +57,16 @@ const WebDevelopment = () => {
           >
             <h2 className="text-4xl font-bold text-gray-900">Expert Solutions for <br/> Complex Challenges</h2>
             <p className="text-lg text-gray-600 leading-relaxed text-justify">
-              At Eejak Tech, we don't just write code; we solve business problems. 
-              Our team of expert developers uses the latest technologies to create 
-              robust web solutions that are secure, fast, and easy to maintain. 
-              From simple corporate sites to complex enterprise platforms, 
-              we deliver excellence at every scale.
+              With web applications development, enterprises can enhance interactivity and their ROI. 
+              We have a team of highly talented, skilled and experienced web app developers 
+              who are well-experienced in making innovative web apps.
+            </p>
+            <p className="text-lg text-gray-600 leading-relaxed text-justify">
+              The members of our web app development team are quite well-versed in various 
+              latest programming languages as well as the latest technologies and strategies 
+              in web application development. Through our knowledge, technical skill and 
+              expertise we can cater to all the needs of our clients and come up with 
+              top quality web applications development that include all the features they expect.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {features.map((f, i) => (
