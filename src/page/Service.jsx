@@ -3,8 +3,8 @@ import ServiceComponents from "../components/ServiceComponents";
 
 const Service = () => {
   return (
-    <div>
-        <ServiceComponents/>
+    <div className="mt-10">
+      <ServiceComponents />
     </div>
   )
 }

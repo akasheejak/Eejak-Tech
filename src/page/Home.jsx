@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import ServiceCardInfo from "../components/ServiceCardInfo";
 import Strategie from "../components/strategie";
 import ContactRedirect from "../components/ContactRedirect";
+import AboutInfo from "../components/AboutInfo";
 
 const Home = () => {
   return (
@@ -72,6 +73,16 @@ const Home = () => {
           </motion.div>
         </div>
       </section>
+
+      {/* about section */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8 }}
+      >
+        <AboutInfo />
+      </motion.div>
 
       {/* Service Sections with Scroll Reveal */}
       <motion.div
