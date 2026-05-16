@@ -4,6 +4,7 @@ import ServiceComponents from "../components/ServiceComponents";
 import ServiceExpert from "../components/ServiceExpert";
 import { motion } from "framer-motion";
 import ServiceCardInfo from "../components/ServiceCardInfo";
+import Strategie from "../components/strategie";
 
 const Home = () => {
   return (
@@ -98,6 +99,15 @@ const Home = () => {
         transition={{ duration: 0.8 }}
       >
         <ServiceCardInfo />
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8 }}
+      >
+        <Strategie />
       </motion.div>
 
     </div>
