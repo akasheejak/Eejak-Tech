@@ -12,6 +12,7 @@ import { BsTwitterX } from "react-icons/bs";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     if (isOpen) {
@@ -24,10 +25,29 @@ const Navbar = () => {
     };
   }, [isOpen]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <>
       {/* ── Fixed Header (Topbar + Navbar) ── */}
-      <header className="fixed top-0 left-0 right-0 z-50">
+      <header
+        className={`fixed top-0 left-0 right-0 z-50 transition-transform duration-500 ease-in-out ${
+          isScrolled ? "md:-translate-y-[53px]" : "translate-y-0"
+        }`}
+      >
         {/* Top Bar */}
         <div className="bg-white text-gray-700 py-3 hidden md:block border-b border-gray-100 shadow-sm">
           <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center text-[14px] font-semibold">
