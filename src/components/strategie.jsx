@@ -50,7 +50,7 @@ const Strategie = () => {
   ];
 
   return (
-    <section className="py-24 relative overflow-hidden bg-white">
+    <section className="py-24 relative z-30 bg-white overflow-x-clip">
       {/* Background Accents */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 opacity-20">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-100 rounded-full blur-[120px] animate-pulse-slow" />
