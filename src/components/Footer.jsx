@@ -99,7 +99,7 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-gray-100 pt-8 flex flex-col md:flex-row items-center justify-between gap-6 text-[10px] tracking-[0.2em] uppercase font-black text-gray-400">
-          <p>&copy; {currentYear} Eejak Technologies Pvt. Ltd. All rights reserved.</p>
+          <p>&copy; 2013 - {currentYear} Eejak Technologies Pvt. Ltd. All rights reserved.</p>
           <div className="flex items-center space-x-8">
             <a href="#" className="hover:text-blue-600 transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-blue-600 transition-colors">Terms & Conditions</a>
