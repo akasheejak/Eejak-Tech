@@ -24,20 +24,21 @@ const MobileDevelopment = () => {
             >
               <FiSmartphone size={40} />
             </motion.div>
-            <motion.h1 
+            <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               className="text-5xl md:text-7xl font-black text-gray-900"
             >
               Mobile App <span className="text-gradient">Development</span>
             </motion.h1>
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
               className="text-xl text-gray-600 leading-relaxed"
             >
-              Innovative mobile experiences that put your business in the palms of your customers' hands.
+              Eejak is one of the leading Mobile application development services company located in Noida, India.
+              We craft high-performance apps for Android, iOS.
             </motion.p>
           </div>
         </div>
@@ -47,7 +48,7 @@ const MobileDevelopment = () => {
       {/* Content Section */}
       <section className="container mx-auto px-4 mb-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -55,13 +56,17 @@ const MobileDevelopment = () => {
           >
             <div className="bg-indigo-600 rounded-[3rem] p-12 text-white shadow-2xl relative overflow-hidden">
               <div className="space-y-6 relative z-10">
-                <h3 className="text-3xl font-bold">Why Go Mobile?</h3>
+                <h3 className="text-3xl font-bold">Expert App Solutions</h3>
                 <p className="text-indigo-50 leading-relaxed text-lg">
-                  In today's digital landscape, a mobile presence is no longer optional. 
-                  We help you bridge the gap between your brand and mobile users 
-                  with seamless, engaging applications that keep them coming back.
+                  We have a strong focus and expertise in mobile apps development and have successfully
+                  developed apps for iOS, Android.
                 </p>
-                <ul className="space-y-4">
+                <p className="text-indigo-50 leading-relaxed">
+                  Being an innovative mobile app development services agency, we are expert in
+                  development of enterprise, e-commerce, healthcare, educational and several
+                  other utility mobile apps at very competitive rates.
+                </p>
+                <ul className="space-y-4 pt-4">
                   <li className="flex items-center space-x-3">
                     <FiZap className="text-yellow-400" />
                     <span>Direct Communication Channel</span>
@@ -80,17 +85,17 @@ const MobileDevelopment = () => {
             </div>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="order-1 lg:order-2 space-y-8"
           >
-            <h2 className="text-4xl font-bold text-gray-900">Crafting Native & <br/> Hybrid Experiences</h2>
+            <h2 className="text-4xl font-bold text-gray-900">Crafting Native & <br /> Hybrid Experiences</h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-              Our mobile developers are experts in building applications that 
-              leverage the full potential of hardware capabilities while 
-              maintaining smooth, buttery performance. We ensure your app 
+              Our mobile developers are experts in building applications that
+              leverage the full potential of hardware capabilities while
+              maintaining smooth, buttery performance. We ensure your app
               stands out in the crowded marketplace.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
