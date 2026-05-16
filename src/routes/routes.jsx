@@ -4,6 +4,9 @@ import Home from '../page/Home';
 import About from '../page/About';
 import Service from '../page/Service';
 import Contact from '../page/Contact';
+import WebDevelopment from '../page/WebDevelopment';
+import MobileDevelopment from '../page/MobileDevelopment';
+import SEOServices from '../page/SEOServices';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +28,18 @@ const router = createBrowserRouter([
       {
         path: '/contact',
         element: <Contact />,
+      },
+      {
+        path: '/services/web-development',
+        element: <WebDevelopment />,
+      },
+      {
+        path: '/services/mobile-development',
+        element: <MobileDevelopment />,
+      },
+      {
+        path: '/services/seo-services',
+        element: <SEOServices />,
       },
     ],
   },

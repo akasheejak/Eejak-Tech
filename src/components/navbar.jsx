@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { HiMenu, HiX } from "react-icons/hi";
+import { HiMenu, HiX, HiChevronDown } from "react-icons/hi";
 import {
   FaFacebookF,
   FaLinkedinIn,
@@ -9,10 +9,18 @@ import {
 } from "react-icons/fa";
 import logo from "../assets/image/logo.png";
 import { BsTwitterX } from "react-icons/bs";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+
+  const serviceLinks = [
+    { name: "Web Development", path: "/services/web-development" },
+    { name: "Mobile App Development", path: "/services/mobile-development" },
+    { name: "SEO Services", path: "/services/seo-services" },
+  ];
 
   useEffect(() => {
     if (isOpen) {
@@ -123,14 +131,47 @@ const Navbar = () => {
                 >
                   About
                 </NavLink>
-                <NavLink
-                  to="/services"
-                  className={({ isActive }) =>
-                    `nav-link ${isActive ? "active" : ""}`
-                  }
+                <div 
+                  className="relative group"
+                  onMouseEnter={() => setIsServicesOpen(true)}
+                  onMouseLeave={() => setIsServicesOpen(false)}
                 >
-                  Services
-                </NavLink>
+                  <NavLink
+                    to="/services"
+                    className={({ isActive }) =>
+                      `nav-link flex items-center space-x-1 ${isActive ? "active" : ""}`
+                    }
+                  >
+                    <span>Services</span>
+                    <HiChevronDown className={`transition-transform duration-300 ${isServicesOpen ? "rotate-180" : ""}`} />
+                  </NavLink>
+
+                  {/* Dropdown Menu */}
+                  <AnimatePresence>
+                    {isServicesOpen && (
+                      <motion.div
+                        initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                        transition={{ duration: 0.2 }}
+                        className="absolute top-full left-0 w-64 pt-4"
+                      >
+                        <div className="bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden p-2">
+                          {serviceLinks.map((service) => (
+                            <NavLink
+                              key={service.path}
+                              to={service.path}
+                              className="block px-4 py-3 rounded-xl text-sm font-semibold text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors"
+                            >
+                              {service.name}
+                            </NavLink>
+                          ))}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+
                 <NavLink
                   to="/contact"
                   className={({ isActive }) =>
@@ -222,20 +263,41 @@ const Navbar = () => {
           >
             About
           </NavLink>
-          <NavLink
-            to="/services"
-            onClick={() => setIsOpen(false)}
-            className={({ isActive }) =>
-              `block px-4 py-3 rounded-lg text-base font-medium transition-colors
-              ${
-                isActive
-                  ? "bg-blue-50 text-blue-600"
-                  : "text-gray-700 hover:bg-gray-50 hover:text-blue-600"
-              }`
-            }
-          >
-            Services
-          </NavLink>
+          {/* Services with Sub-menu */}
+          <div className="space-y-1">
+            <button
+              onClick={() => setIsServicesOpen(!isServicesOpen)}
+              className={`w-full flex items-center justify-between px-4 py-3 rounded-lg text-base font-medium transition-colors
+                ${isServicesOpen ? "bg-blue-50 text-blue-600" : "text-gray-700 hover:bg-gray-50 hover:text-blue-600"}
+              `}
+            >
+              <span>Services</span>
+              <HiChevronDown className={`transition-transform duration-300 ${isServicesOpen ? "rotate-180" : ""}`} />
+            </button>
+            
+            <AnimatePresence>
+              {isServicesOpen && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: "auto", opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  className="overflow-hidden pl-4"
+                >
+                  {serviceLinks.map((service) => (
+                    <NavLink
+                      key={service.path}
+                      to={service.path}
+                      onClick={() => setIsOpen(false)}
+                      className="block px-4 py-2 text-sm font-medium text-gray-600 hover:text-blue-600"
+                    >
+                      {service.name}
+                    </NavLink>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
           <NavLink
             to="/contact"
             onClick={() => setIsOpen(false)}
