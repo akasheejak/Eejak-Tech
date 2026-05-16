@@ -1,14 +1,15 @@
 import { Outlet, useLocation } from 'react-router-dom';
 import Navbar from './components/navbar';
+import Footer from './components/Footer';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const App = () => {
   const location = useLocation();
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white flex flex-col">
       <Navbar />
-      <main className="max-w-[1500px] mx-auto px-4 md:px-8 pt-20">
+      <main className="max-w-[1500px] mx-auto px-4 md:px-8 pt-20 flex-grow">
         <AnimatePresence mode="wait">
           <motion.div
             key={location.pathname}
@@ -21,6 +22,8 @@ const App = () => {
           </motion.div>
         </AnimatePresence>
       </main>
+      
+      <Footer />
       
       {/* Premium background blobs */}
       <div className="fixed top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-100/50 rounded-full blur-[120px] -z-10 animate-pulse" />
