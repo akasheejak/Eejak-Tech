@@ -45,10 +45,13 @@ const Home = () => {
               transition={{ delay: 0.6, duration: 0.5 }}
               className="flex flex-wrap justify-center lg:justify-start gap-4 pt-4"
             >
-              <button className="btn-primary flex items-center space-x-2 group">
+              <a
+                href="tel:+918070004400"
+                className="btn-primary flex items-center space-x-2 group"
+              >
                 <span>Get a Free Consultation</span>
                 <FaRocket className="group-hover:translate-x-1 transition-transform" />
-              </button>
+              </a>
             </motion.div>
           </motion.div>
 
