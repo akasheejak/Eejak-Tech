@@ -5,6 +5,7 @@ import ServiceExpert from "../components/ServiceExpert";
 import { motion } from "framer-motion";
 import ServiceCardInfo from "../components/ServiceCardInfo";
 import Strategie from "../components/strategie";
+import ContactRedirect from "../components/ContactRedirect";
 
 const Home = () => {
   return (
@@ -109,7 +110,15 @@ const Home = () => {
       >
         <Strategie />
       </motion.div>
-
+      {/* let talk section */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8 }}
+      >
+        <ContactRedirect />
+      </motion.div>
     </div>
   );
 };
