@@ -209,12 +209,6 @@ const Navbar = () => {
                                 <p className="text-xs text-slate-300 leading-relaxed font-medium">
                                   {hoveredService?.desc || serviceLinks[0].desc}
                                 </p>
-                                <div className="pt-2">
-                                  <span className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-wider text-blue-400">
-                                    <span>Learn More</span>
-                                    <FiArrowRight />
-                                  </span>
-                                </div>
                               </div>
                             </div>
                           </div>
