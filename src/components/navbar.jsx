@@ -20,6 +20,8 @@ const Navbar = () => {
     { name: "Web Development", path: "/services/web-development" },
     { name: "Mobile App Development", path: "/services/mobile-development" },
     { name: "SEO Services", path: "/services/seo-services" },
+    { name: "DevOps Services", path: "/services/devops" },
+    { name: "AI & ML Solutions", path: "/services/ai-ml" },
   ];
 
   useEffect(() => {

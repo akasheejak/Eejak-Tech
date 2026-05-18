@@ -7,6 +7,8 @@ import Contact from '../page/Contact';
 import WebDevelopment from '../page/WebDevelopment';
 import MobileDevelopment from '../page/MobileDevelopment';
 import SEOServices from '../page/SEOServices';
+import DevOps from '../page/DevOps';
+import AiMl from '../page/AiMl';
 
 const router = createBrowserRouter([
   {
@@ -40,6 +42,14 @@ const router = createBrowserRouter([
       {
         path: '/services/seo-services',
         element: <SEOServices />,
+      },
+      {
+        path: '/services/devops',
+        element: <DevOps />,
+      },
+      {
+        path: '/services/ai-ml',
+        element: <AiMl />,
       },
     ],
   },

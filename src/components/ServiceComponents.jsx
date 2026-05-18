@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FiCode, FiSmartphone, FiTrendingUp, FiArrowRight } from "react-icons/fi";
+import { FiCode, FiSmartphone, FiTrendingUp, FiArrowRight, FiCloud, FiCpu } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
 const ServiceComponents = () => {
@@ -28,6 +28,22 @@ const ServiceComponents = () => {
       icon: <FiTrendingUp size={30} />,
       color: "blue",
       link: "/services/seo-services"
+    },
+    {
+      tag: "What We Do Best",
+      title: "DevOps Services",
+      desc: "Streamline development pipelines, automate environments, and build high availability systems on multi-cloud.",
+      icon: <FiCloud size={30} />,
+      color: "indigo",
+      link: "/services/devops"
+    },
+    {
+      tag: "What We Do Best",
+      title: "AI & ML Solutions",
+      desc: "Drive automation and data intelligence. We build custom computer vision, NLP, and predictive AI models.",
+      icon: <FiCpu size={30} />,
+      color: "blue",
+      link: "/services/ai-ml"
     },
   ];
 
