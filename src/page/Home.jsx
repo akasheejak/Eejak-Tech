@@ -7,6 +7,7 @@ import ServiceCardInfo from "../components/ServiceCardInfo";
 import Strategie from "../components/strategie";
 import ContactRedirect from "../components/ContactRedirect";
 import AboutInfo from "../components/AboutInfo";
+import IndustriesServe from "../components/IndustriesServe";
 
 const Home = () => {
   return (
@@ -114,6 +115,16 @@ const Home = () => {
         transition={{ duration: 0.8 }}
       >
         <ServiceCardInfo />
+      </motion.div>
+
+      {/* Industries We Serve */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8 }}
+      >
+        <IndustriesServe />
       </motion.div>
 
       <motion.div
