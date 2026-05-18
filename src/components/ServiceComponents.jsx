@@ -107,14 +107,13 @@ const ServiceComponents = () => {
               whileHover={{ y: -12 }}
               className="group glass-card p-10 rounded-[2.5rem] border border-gray-100 hover:border-blue-600/30 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/10"
             >
-              <div className={`w-20 h-20 rounded-3xl flex items-center justify-center mb-8 transition-all duration-500 ${
-                service.color === "blue" 
-                  ? "bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white" 
-                  : "bg-indigo-50 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white"
-              }`}>
+              <div className={`w-20 h-20 rounded-3xl flex items-center justify-center mb-8 transition-all duration-500 ${service.color === "blue"
+                ? "bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white"
+                : "bg-indigo-50 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white"
+                }`}>
                 {service.icon}
               </div>
-              
+
               <div className="space-y-4">
                 <span className="text-[10px] font-black uppercase tracking-[0.2em] text-blue-600/60 block">
                   {service.tag}
@@ -125,9 +124,9 @@ const ServiceComponents = () => {
                 <p className="text-gray-600 leading-relaxed text-sm">
                   {service.desc}
                 </p>
-                
+
                 <div className="pt-6">
-                  <Link 
+                  <Link
                     to={service.link}
                     className="inline-flex items-center space-x-2 text-blue-600 font-bold uppercase tracking-widest text-[11px] group/btn"
                   >
