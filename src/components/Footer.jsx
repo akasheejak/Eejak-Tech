@@ -51,9 +51,6 @@ const Footer = () => {
                 <Link to="/about" className="text-gray-600 hover:text-blue-600 transition-colors font-medium">About Us</Link>
               </li>
               <li>
-                <Link to="/services" className="text-gray-600 hover:text-blue-600 transition-colors font-medium">Our Services</Link>
-              </li>
-              <li>
                 <Link to="/contact" className="text-gray-600 hover:text-blue-600 transition-colors font-medium">Contact Us</Link>
               </li>
             </ul>
@@ -63,11 +60,15 @@ const Footer = () => {
           <div>
             <h3 className="text-gray-900 font-black text-lg mb-6 uppercase tracking-wider">Services</h3>
             <ul className="space-y-4 text-sm font-medium">
-              <li className="text-gray-600 hover:text-blue-600 transition-colors cursor-pointer">Custom Software Development</li>
-              <li className="text-gray-600 hover:text-blue-600 transition-colors cursor-pointer">Web Application Development</li>
-              <li className="text-gray-600 hover:text-blue-600 transition-colors cursor-pointer">Mobile App Solutions</li>
-              <li className="text-gray-600 hover:text-blue-600 transition-colors cursor-pointer">Digital Transformation</li>
-              <li className="text-gray-600 hover:text-blue-600 transition-colors cursor-pointer">UI/UX Design Strategy</li>
+              <li>
+                <Link to="/services/web-development" className="text-gray-600 hover:text-blue-600 transition-colors cursor-pointer block">Web Development</Link>
+              </li>
+              <li>
+                <Link to="/services/mobile-development" className="text-gray-600 hover:text-blue-600 transition-colors cursor-pointer block">Mobile App Development</Link>
+              </li>
+              <li>
+                <Link to="/services/seo-services" className="text-gray-600 hover:text-blue-600 transition-colors cursor-pointer block">SEO Services</Link>
+              </li>
             </ul>
           </div>
 
