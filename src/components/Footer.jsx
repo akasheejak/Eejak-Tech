@@ -17,14 +17,14 @@ const Footer = () => {
     <footer className="bg-white border-t border-gray-100 pt-20 pb-10">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-          
+
           {/* Brand & Mission */}
           <div className="space-y-6">
             <Link to="/" className="inline-block transition-transform hover:scale-105">
               <img src={logo} alt="Eejak Tech Logo" className="h-12 w-auto" />
             </Link>
             <p className="text-gray-600 text-sm leading-relaxed max-w-xs">
-              Transforming businesses with innovative IT solutions and custom software 
+              Transforming businesses with innovative IT solutions and custom software
               development since 2013. We build the future of digital excellence.
             </p>
             <div className="flex items-center space-x-4">
