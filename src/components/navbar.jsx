@@ -43,7 +43,7 @@ const Navbar = () => {
       path: "/services/devops",
       desc: "Automate delivery and orchestrate cloud grids.",
       icon: <FiCloud size={20} />,
-      image: "https://images.unsplash.com/photo-1618401471353-b98aedd07871?q=80&w=600&auto=format&fit=crop",
+      image: "https://images.unsplash.com/photo-1667372335937-d03be6fb0a9c?q=80&w=1332&auto=format&fit=crop",
       tagline: "Streamline Cloud Infrastructure"
     },
     {
@@ -51,7 +51,7 @@ const Navbar = () => {
       path: "/services/ai-ml",
       desc: "Harness cognitive intelligence & pattern models.",
       icon: <FiCpu size={20} />,
-      image: "https://images.unsplash.com/photo-1677442136019-21780efad99a?q=80&w=600&auto=format&fit=crop",
+      image: "https://plus.unsplash.com/premium_photo-1683121710572-7723bd2e235d?w=600&auto=format&fit=crop",
       tagline: "Pioneering Cognitive Data"
     },
   ];
