@@ -27,8 +27,8 @@ const ServiceExpert = () => {
       desc: "Track leads and manage customer relationships to boost sales and engagement.",
       icon: <FaChartBar size={32} />,
       size: "col-span-1 md:col-span-3",
-      bg: "bg-blue-50",
-      textColor: "text-gray-900"
+      bg: "bg-slate-900",
+      textColor: "text-white"
     },
     {
       title: "ERP Solution",
@@ -43,7 +43,7 @@ const ServiceExpert = () => {
       desc: "Integrate sales, inventory, and billing seamlessly for retail success.",
       icon: <FaShoppingCart size={28} />,
       size: "col-span-1 md:col-span-2",
-      bg: "bg-white",
+      bg: "bg-blue-600",
       textColor: "text-gray-900"
     },
     {
@@ -51,8 +51,8 @@ const ServiceExpert = () => {
       desc: "Manage and publish content easily without coding requirements.",
       icon: <FaFileAlt size={40} />,
       size: "col-span-1 md:col-span-4",
-      bg: "bg-white",
-      textColor: "text-gray-900",
+      bg: "bg-slate-900",
+      textColor: "text-white",
       isWide: true
     }
   ];
@@ -60,7 +60,7 @@ const ServiceExpert = () => {
   return (
     <div className="py-12 space-y-12 overflow-hidden">
       {/* ── Header Section ── */}
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
@@ -81,7 +81,7 @@ const ServiceExpert = () => {
       {/* ── Bento Grid ── */}
       <div className="grid grid-cols-1 md:grid-cols-6 gap-6">
         {solutions.map((item, i) => (
-          <motion.div 
+          <motion.div
             key={i}
             initial={{ opacity: 0, scale: 0.9, y: 30 }}
             whileInView={{ opacity: 1, scale: 1, y: 0 }}
@@ -103,12 +103,11 @@ const ServiceExpert = () => {
 
             <div className={`relative z-10 h-full flex flex-col ${item.isWide ? 'md:flex-row md:items-center md:justify-between gap-8' : 'justify-between'}`}>
               <div className="space-y-6">
-                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-500 ${
-                  item.bg === 'bg-white' ? 'bg-blue-600 text-white' : 'bg-white/10 text-white'
-                }`}>
+                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-500 ${item.bg === 'bg-white' ? 'bg-blue-600 text-white' : 'bg-white/10 text-white'
+                  }`}>
                   {item.icon}
                 </div>
-                
+
                 <div className="space-y-3">
                   <h4 className={`text-3xl font-black ${item.isWide ? 'md:text-5xl' : ''}`}>{item.title}</h4>
                   <p className={`text-lg opacity-80 leading-relaxed max-w-md ${item.isWide ? 'md:text-xl' : ''}`}>
@@ -143,4 +142,4 @@ const ServiceExpert = () => {
 
 export default ServiceExpert;
 
-
+
