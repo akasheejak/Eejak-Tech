@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <div className="">
       {/* ── Hero Section ── */}
-      <section className="relative py-8 lg:py-16">
+      <section className="relative py-8 md:py-16 lg:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left: Content */}
           <motion.div
