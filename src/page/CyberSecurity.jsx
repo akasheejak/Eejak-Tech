@@ -139,5 +139,4 @@ const CyberSecurity = () => {
     </div>
   );
 };
-
 export default CyberSecurity;
