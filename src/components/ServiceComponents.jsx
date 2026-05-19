@@ -1,7 +1,8 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FiCode, FiSmartphone, FiTrendingUp, FiArrowRight, FiCloud, FiCpu } from "react-icons/fi";
+import { FiCode, FiSmartphone, FiTrendingUp, FiArrowRight, FiCloud, FiCpu, FiShield } from "react-icons/fi";
 import { Link } from "react-router-dom";
+
 
 const ServiceComponents = () => {
   const services = [
@@ -44,6 +45,14 @@ const ServiceComponents = () => {
       icon: <FiCpu size={30} />,
       color: "blue",
       link: "/services/ai-ml"
+    },
+    {
+      tag: "What We Do Best",
+      title: "Cyber Security",
+      desc: "Protect your business from cyber threats. We offer comprehensive assessment, real-time monitoring, and mitigation strategies.",
+      icon: <FiShield size={30} />,
+      color: "indigo",
+      link: "/services/cyber-security"
     },
   ];
 

@@ -8,7 +8,9 @@ import WebDevelopment from '../page/WebDevelopment';
 import MobileDevelopment from '../page/MobileDevelopment';
 import SEOServices from '../page/SEOServices';
 import DevOps from '../page/DevOps';
+
 import AiMl from '../page/AiMl';
+import CyberSecurity from '../page/CyberSecurity';
 
 
 const router = createBrowserRouter([
@@ -51,6 +53,10 @@ const router = createBrowserRouter([
       {
         path: '/services/ai-ml',
         element: <AiMl />,
+      },
+      {
+        path: '/services/cyber-security',
+        element: <CyberSecurity />,
       },
     ],
   },

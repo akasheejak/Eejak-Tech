@@ -7,8 +7,9 @@ import {
   FaPhoneAlt,
   FaEnvelope,
 } from "react-icons/fa";
-import { FiCode, FiSmartphone, FiTrendingUp, FiCloud, FiCpu, FiArrowRight } from "react-icons/fi";
+import { FiCode, FiSmartphone, FiTrendingUp, FiCloud, FiCpu, FiArrowRight, FiShield } from "react-icons/fi";
 import logo from "../assets/image/logo.png";
+
 import { BsTwitterX } from "react-icons/bs";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -53,6 +54,14 @@ const Navbar = () => {
       icon: <FiCpu size={20} />,
       image: "https://plus.unsplash.com/premium_photo-1683121710572-7723bd2e235d?w=600&auto=format&fit=crop",
       tagline: "Pioneering Cognitive Data"
+    },
+    {
+      name: "Cyber Security",
+      path: "/services/cyber-security",
+      desc: "Defend your digital ecosystem with advanced cybersecurity protocols.",
+      icon: <FiShield size={20} />,
+      image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=600&auto=format&fit=crop",
+      tagline: "Secure Your Digital Infrastructure"
     },
   ];
 
