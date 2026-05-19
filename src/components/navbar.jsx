@@ -7,7 +7,15 @@ import {
   FaPhoneAlt,
   FaEnvelope,
 } from "react-icons/fa";
-import { FiCode, FiSmartphone, FiTrendingUp, FiCloud, FiCpu, FiArrowRight, FiShield } from "react-icons/fi";
+import {
+  FiCode,
+  FiSmartphone,
+  FiTrendingUp,
+  FiCloud,
+  FiCpu,
+  FiArrowRight,
+  FiShield,
+} from "react-icons/fi";
 import logo from "../assets/image/logo.png";
 
 import { BsTwitterX } from "react-icons/bs";
@@ -20,48 +28,54 @@ const Navbar = () => {
       path: "/services/web-development",
       desc: "Custom-built, fast, and secure web applications.",
       icon: <FiCode size={20} />,
-      image: "https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=600&auto=format&fit=crop",
-      tagline: "Build Scalable Web Apps"
+      image:
+        "https://images.unsplash.com/photo-1547658719-da2b51169166?q=80&w=600&auto=format&fit=crop",
+      tagline: "Build Scalable Web Apps",
     },
     {
       name: "Mobile App Development",
       path: "/services/mobile-development",
       desc: "Cross-platform mobile apps with native feels.",
       icon: <FiSmartphone size={20} />,
-      image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=600&auto=format&fit=crop",
-      tagline: "Innovative Mobile Solutions"
+      image:
+        "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=600&auto=format&fit=crop",
+      tagline: "Innovative Mobile Solutions",
     },
     {
       name: "SEO Services",
       path: "/services/seo-services",
       desc: "Rank higher and drive quality organic traffic.",
       icon: <FiTrendingUp size={20} />,
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop",
-      tagline: "Maximize Search Visibility"
+      image:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&auto=format&fit=crop",
+      tagline: "Maximize Search Visibility",
     },
     {
       name: "DevOps Services",
       path: "/services/devops",
       desc: "Automate delivery and orchestrate cloud grids.",
       icon: <FiCloud size={20} />,
-      image: "https://images.unsplash.com/photo-1667372335937-d03be6fb0a9c?q=80&w=1332&auto=format&fit=crop",
-      tagline: "Streamline Cloud Infrastructure"
+      image:
+        "https://images.unsplash.com/photo-1667372335937-d03be6fb0a9c?q=80&w=1332&auto=format&fit=crop",
+      tagline: "Streamline Cloud Infrastructure",
     },
     {
       name: "AI & ML Solutions",
       path: "/services/ai-ml",
       desc: "Harness cognitive intelligence & pattern models.",
       icon: <FiCpu size={20} />,
-      image: "https://plus.unsplash.com/premium_photo-1683121710572-7723bd2e235d?w=600&auto=format&fit=crop",
-      tagline: "Pioneering Cognitive Data"
+      image:
+        "https://plus.unsplash.com/premium_photo-1683121710572-7723bd2e235d?w=600&auto=format&fit=crop",
+      tagline: "Pioneering Cognitive Data",
     },
     {
       name: "Cyber Security",
       path: "/services/cyber-security",
       desc: "Defend your digital ecosystem with advanced cybersecurity protocols.",
       icon: <FiShield size={20} />,
-      image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=600&auto=format&fit=crop",
-      tagline: "Secure Your Digital Infrastructure"
+      image:
+        "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=600&auto=format&fit=crop",
+      tagline: "Secure Your Digital Infrastructure",
     },
   ];
 
@@ -73,7 +87,9 @@ const Navbar = () => {
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [isOpen]);
 
   useEffect(() => {
@@ -89,30 +105,47 @@ const Navbar = () => {
     <>
       {/* ── Fixed Header ── */}
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-transform duration-500 ease-in-out ${isScrolled ? "md:-translate-y-[53px]" : "translate-y-0"
-          }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-transform duration-500 ease-in-out ${
+          isScrolled ? "md:-translate-y-[53px]" : "translate-y-0"
+        }`}
       >
         {/* Top Bar */}
         <div className="bg-white text-gray-700 py-3 hidden md:block border-b border-gray-100 shadow-sm">
           <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center text-[14px] font-semibold">
             <div className="flex items-center space-x-10">
-              <a href="tel:+918070004400" className="flex items-center space-x-2.5 hover:text-blue-600 transition-colors group">
+              <a
+                href="tel:+918070004400"
+                className="flex items-center space-x-2.5 hover:text-blue-600 transition-colors group"
+              >
                 <FaPhoneAlt className="text-blue-600 text-[14px] group-hover:rotate-12 transition-transform" />
                 <span className="tracking-wide">+91 807000 4400</span>
               </a>
-              <a href="mailto:info@eejak.com" className="flex items-center space-x-2.5 hover:text-blue-600 transition-colors group">
+              <a
+                href="mailto:info@eejak.com"
+                className="flex items-center space-x-2.5 hover:text-blue-600 transition-colors group"
+              >
                 <FaEnvelope className="text-blue-600 text-[14px] group-hover:-translate-y-0.5 transition-transform" />
                 <span className="tracking-wide">info@eejak.com</span>
               </a>
             </div>
             <div className="flex items-center space-x-4">
-              <a href="#" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-110 shadow-sm">
+              <a
+                href="#"
+                className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-110 shadow-sm"
+              >
                 <FaFacebookF size={15} />
               </a>
-              <a href="https://in.linkedin.com/company/eejak-technologies" target="_blank" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-110 shadow-sm">
+              <a
+                href="https://in.linkedin.com/company/eejak-technologies"
+                target="_blank"
+                className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-110 shadow-sm"
+              >
                 <FaLinkedinIn size={15} />
               </a>
-              <a href="#" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-110 shadow-sm">
+              <a
+                href="#"
+                className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-110 shadow-sm"
+              >
                 <BsTwitterX size={15} />
               </a>
             </div>
@@ -132,10 +165,20 @@ const Navbar = () => {
 
               {/* Desktop Menu */}
               <div className="hidden md:flex items-center space-x-2">
-                <NavLink to="/" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>
+                <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    `nav-link ${isActive ? "active" : ""}`
+                  }
+                >
                   Home
                 </NavLink>
-                <NavLink to="/about" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>
+                <NavLink
+                  to="/about"
+                  className={({ isActive }) =>
+                    `nav-link ${isActive ? "active" : ""}`
+                  }
+                >
                   About
                 </NavLink>
 
@@ -152,7 +195,9 @@ const Navbar = () => {
                     }
                   >
                     <span>Services</span>
-                    <HiChevronDown className={`transition-transform duration-300 ${isServicesOpen ? "rotate-180" : ""}`} />
+                    <HiChevronDown
+                      className={`transition-transform duration-300 ${isServicesOpen ? "rotate-180" : ""}`}
+                    />
                   </NavLink>
 
                   <AnimatePresence>
@@ -177,12 +222,15 @@ const Navbar = () => {
                                 <NavLink
                                   key={service.path}
                                   to={service.path}
-                                  onMouseEnter={() => setHoveredService(service)}
+                                  onMouseEnter={() =>
+                                    setHoveredService(service)
+                                  }
                                   onClick={() => setIsServicesOpen(false)}
                                   className={({ isActive }) =>
-                                    `flex items-start gap-4 p-4 rounded-2xl transition-all duration-300 ${isActive
-                                      ? "bg-blue-50/80 text-blue-600"
-                                      : "hover:bg-blue-50/40 text-gray-700 hover:text-blue-600"
+                                    `flex items-start gap-4 p-4 rounded-2xl transition-all duration-300 ${
+                                      isActive
+                                        ? "bg-blue-50/80 text-blue-600"
+                                        : "hover:bg-blue-50/40 text-gray-700 hover:text-blue-600"
                                     }`
                                   }
                                 >
@@ -190,8 +238,12 @@ const Navbar = () => {
                                     {service.icon}
                                   </div>
                                   <div>
-                                    <h5 className="text-sm font-bold leading-none mb-1.5">{service.name}</h5>
-                                    <p className="text-xs text-gray-500 font-medium leading-relaxed">{service.desc}</p>
+                                    <h5 className="text-sm font-bold leading-none mb-1.5">
+                                      {service.name}
+                                    </h5>
+                                    <p className="text-xs text-gray-500 font-medium leading-relaxed">
+                                      {service.desc}
+                                    </p>
                                   </div>
                                 </NavLink>
                               ))}
@@ -202,7 +254,10 @@ const Navbar = () => {
                             <div className="absolute inset-y-0 left-8 right-0 rounded-[1.5rem] overflow-hidden bg-slate-900 text-white group p-6 flex flex-col justify-between">
                               <div className="absolute inset-0 z-0">
                                 <img
-                                  src={hoveredService?.image || serviceLinks[0].image}
+                                  src={
+                                    hoveredService?.image ||
+                                    serviceLinks[0].image
+                                  }
                                   alt={hoveredService?.name}
                                   className="w-full h-full object-cover opacity-35 transition-transform duration-700 scale-105 hover:scale-110"
                                 />
@@ -214,7 +269,10 @@ const Navbar = () => {
                                 </span>
                               </div>
                               <div className="relative z-10 space-y-3 mt-auto text-left">
-                                <h4 className="text-lg font-black tracking-tight">{hoveredService?.tagline || serviceLinks[0].tagline}</h4>
+                                <h4 className="text-lg font-black tracking-tight">
+                                  {hoveredService?.tagline ||
+                                    serviceLinks[0].tagline}
+                                </h4>
                                 <p className="text-xs text-slate-300 leading-relaxed font-medium">
                                   {hoveredService?.desc || serviceLinks[0].desc}
                                 </p>
@@ -227,7 +285,12 @@ const Navbar = () => {
                   </AnimatePresence>
                 </div>
 
-                <NavLink to="/contact" className={({ isActive }) => `nav-link ${isActive ? "active" : ""}`}>
+                <NavLink
+                  to="/contact"
+                  className={({ isActive }) =>
+                    `nav-link ${isActive ? "active" : ""}`
+                  }
+                >
                   Contact
                 </NavLink>
               </div>
@@ -330,7 +393,9 @@ const Navbar = () => {
                 ${mobileServicesOpen ? "bg-blue-50 text-blue-600" : "text-gray-700 hover:bg-gray-50 hover:text-blue-600"}`}
             >
               <span>Services</span>
-              <HiChevronDown className={`transition-transform duration-300 ${mobileServicesOpen ? "rotate-180" : ""}`} />
+              <HiChevronDown
+                className={`transition-transform duration-300 ${mobileServicesOpen ? "rotate-180" : ""}`}
+              />
             </button>
 
             <AnimatePresence>
@@ -373,20 +438,35 @@ const Navbar = () => {
         <div className="px-5 py-6 border-t border-gray-100 space-y-4">
           <button className="w-full btn-primary">Get Started</button>
           <div className="flex items-center space-x-3">
-            <a href="tel:+918070004400" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-blue-600 hover:text-white transition-all duration-300">
+            <a
+              href="tel:+918070004400"
+              className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-blue-600 hover:text-white transition-all duration-300"
+            >
               <FaPhoneAlt size={14} />
             </a>
-            <a href="mailto:info@eejak.com" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-blue-600 hover:text-white transition-all duration-300">
+            <a
+              href="mailto:info@eejak.com"
+              className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-blue-600 hover:text-white transition-all duration-300"
+            >
               <FaEnvelope size={14} />
             </a>
-            <a href="#" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-blue-600 hover:text-white transition-all duration-300">
+            <a
+              href="#"
+              className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-blue-600 hover:text-white transition-all duration-300"
+            >
               <FaFacebookF size={14} />
             </a>
-            <a href="#" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-blue-600 hover:text-white transition-all duration-300">
+            <a
+              href="#"
+              className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-blue-600 hover:text-white transition-all duration-300"
+            >
               <FaLinkedinIn size={14} />
             </a>
 
-            <a href="#" className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-blue-600 hover:text-white transition-all duration-300">
+            <a
+              href="#"
+              className="w-9 h-9 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 hover:bg-blue-600 hover:text-white transition-all duration-300"
+            >
               <BsTwitterX size={14} />
             </a>
           </div>
