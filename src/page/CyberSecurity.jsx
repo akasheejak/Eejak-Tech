@@ -1,15 +1,33 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { FiShield, FiCheckCircle, FiLock, FiAlertTriangle, FiKey, FiEye } from 'react-icons/fi';
-import ContactRedirect from '../components/ContactRedirect';
+import React from "react";
+import { motion } from "framer-motion";
+import {
+  FiShield,
+  FiCheckCircle,
+  FiLock,
+  FiAlertTriangle,
+  FiKey,
+  FiEye,
+} from "react-icons/fi";
+import ContactRedirect from "../components/ContactRedirect";
 
 const CyberSecurity = () => {
-
   const features = [
-    { title: "Vulnerability Assessments (VAPT)", desc: "Identify security gaps, assess system weaknesses, and perform advanced penetration testing." },
-    { title: "Network & Cloud Security", desc: "Secure multi-cloud configurations and network boundaries with robust architecture design." },
-    { title: "Compliance & Auditing", desc: "Ensure your operations comply with standards like ISO 27001, GDPR, and local security laws." },
-    { title: "Managed Threat Detection (SOC)", desc: "Establish continuous monitoring and automated incident response channels for security events." }
+    {
+      title: "Vulnerability Assessments (VAPT)",
+      desc: "Identify security gaps, assess system weaknesses, and perform advanced penetration testing.",
+    },
+    {
+      title: "Network & Cloud Security",
+      desc: "Secure multi-cloud configurations and network boundaries with robust architecture design.",
+    },
+    {
+      title: "Compliance & Auditing",
+      desc: "Ensure your operations comply with standards like ISO 27001, GDPR, and local security laws.",
+    },
+    {
+      title: "Managed Threat Detection (SOC)",
+      desc: "Establish continuous monitoring and automated incident response channels for security events.",
+    },
   ];
 
   return (
@@ -38,9 +56,10 @@ const CyberSecurity = () => {
               transition={{ delay: 0.2 }}
               className="text-xl text-gray-600 leading-relaxed"
             >
-              Eejak Solutions delivers robust enterprise-level security implementations.
-              We protect your digital landscape, defend your assets against evolving threats,
-              and build zero-trust security postures.
+              Eejak Solutions delivers robust enterprise-level security
+              implementations. We protect your digital landscape, defend your
+              assets against evolving threats, and build zero-trust security
+              postures.
             </motion.p>
           </div>
         </div>
@@ -56,16 +75,20 @@ const CyberSecurity = () => {
             viewport={{ once: true }}
             className="space-y-8"
           >
-            <h2 className="text-4xl font-bold text-gray-900">Defend Your Infrastructure <br /> Against Digital Threats</h2>
+            <h2 className="text-4xl font-bold text-gray-900">
+              Defend Your Infrastructure <br /> Against Digital Threats
+            </h2>
             <p className="text-lg text-gray-600 leading-relaxed text-justify">
-              In a digital-first era, safeguarding data and resources is a critical business imperative.
-              Our certified cyber security experts construct intelligent, comprehensive defensive matrices
-              tailored to your system's individual threat profile.
+              In a digital-first era, safeguarding data and resources is a
+              critical business imperative. Our certified cyber security experts
+              construct intelligent, comprehensive defensive matrices tailored
+              to your system's individual threat profile.
             </p>
             <p className="text-lg text-gray-600 leading-relaxed text-justify">
-              From localized network security controls to full cloud container environment compliance,
-              we adapt cutting-edge cryptographic protocols and access mechanisms to shield your data
-              against unauthorized entry, vulnerability exploitation, and leaks.
+              From localized network security controls to full cloud container
+              environment compliance, we adapt cutting-edge cryptographic
+              protocols and access mechanisms to shield your data against
+              unauthorized entry, vulnerability exploitation, and leaks.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {features.map((f, i) => (
